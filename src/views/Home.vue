@@ -3,7 +3,7 @@
     class="hero"
     :style="{ backgroundImage: imageUrl ? `url(${imageUrl})` : undefined }"
   >
-    <div class="home">
+    <div class="home fade-up">
       <h1 class="title">Welcome to My Website</h1>
       <p>{{ tagline }}</p>
     </div>
