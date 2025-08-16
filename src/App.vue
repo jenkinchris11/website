@@ -7,7 +7,9 @@ import Sidebar from './components/Sidebar.vue'
   <v-app>
     <Sidebar />
     <v-main class="content">
-      <RouterView />
+      <transition name="fade" mode="out-in">
+        <RouterView />
+      </transition>
     </v-main>
   </v-app>
 </template>
