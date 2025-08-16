@@ -13,14 +13,37 @@
 a {
   color: #1a1a1a;
   text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 0.3s ease;
 }
 a:hover {
-  color: #555555;
+  background-size: 100% 1px;
 }
 
 body {
   margin: 0;
   color: #1a1a1a;
+  font-size: clamp(1rem, 0.5vw + 1rem, 1.25rem);
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+p {
+  font-size: clamp(1rem, 0.25vw + 1rem, 1.125rem);
+}
+
+.container {
+  max-width: 60ch;
+  margin-inline: auto;
 }
 
 /* Route transition */
@@ -34,13 +57,15 @@ body {
   opacity: 0;
 }
 
-/* Route transition */
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 300ms ease;
+.fade-up {
+  opacity: 0;
+  transform: translateY(1rem);
+  animation: fade-up 0.6s ease forwards;
 }
 
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
+@keyframes fade-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

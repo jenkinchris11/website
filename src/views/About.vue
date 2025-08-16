@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="page container fade-up">
     <h1>About</h1>
     <p>This is the about page.</p>
   </div>

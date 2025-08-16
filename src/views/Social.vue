@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="page container fade-up">
     <h1>Social</h1>
     <p>Follow us on social media.</p>
   </div>
