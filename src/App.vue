@@ -4,23 +4,16 @@ import Sidebar from './components/Sidebar.vue'
 </script>
 
 <template>
-  <div id="layout">
+  <v-app>
     <Sidebar />
-    <main class="content">
+    <v-main class="content">
       <RouterView />
-    </main>
-  </div>
+    </v-main>
+  </v-app>
 </template>
 
 <style>
-#layout {
-  display: flex;
-}
 .content {
-  margin-left: 200px;
   padding: 2rem;
-  width: calc(100% - 200px);
-  min-height: 100vh;
-  box-sizing: border-box;
 }
 </style>
