@@ -1,0 +1,12 @@
+<template>
+  <div class="page">
+    <h1>Social</h1>
+    <p>Follow us on social media.</p>
+  </div>
+</template>
+
+<style scoped>
+.page {
+  padding: 1rem;
+}
+</style>
