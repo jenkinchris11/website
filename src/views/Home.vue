@@ -11,11 +11,13 @@
       </div>
     </video-background>
   </section>
+  <Slideshow />
 </template>
 
 <script setup>
 import VideoBackground from "vue-responsive-video-background-player";
 import backgroundVideo from "../assets/Video/A Certain Ratio.mp4";
+import Slideshow from "../components/Slideshow.vue";
 
 const { tagline } = defineProps({
   tagline: {
