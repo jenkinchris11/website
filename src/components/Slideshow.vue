@@ -1,19 +1,10 @@
 <template>
   <div>
-    <div class="social-links">
-      <a href="https://www.linkedin.com/in/jswithzikebuz/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="https://x.com/jswithzikebuz" target="_blank" aria-label="X"><i class="fab fa-twitter"></i></a>
-      <a href="https://www.instagram.com/jswithzikebuz/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.facebook.com/jswithzikebuz" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-    </div>
-
     <div class="slideshow-container"></div>
 
     <div id="projects" class="content-section">
-      <Projects />
     </div>
     <div id="gallery" class="content-section">
-      <Gallery />
     </div>
 
     <div class="controls">
