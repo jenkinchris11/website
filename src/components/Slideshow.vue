@@ -200,7 +200,8 @@ body.dark {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    width: 90%;
+    width: 100%;
+    height: 100%;
     max-width: 1200px;
     align-items: center;
     position: absolute;
