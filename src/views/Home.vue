@@ -40,8 +40,8 @@ const { tagline } = defineProps({
 }
 .home {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 45%;
+  left: 40%;
   transform: translate(-50%, -50%);
   text-align: center;
   color: white;
