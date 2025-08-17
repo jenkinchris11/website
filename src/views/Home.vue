@@ -59,7 +59,6 @@ const { tagline } = defineProps({
   font-style: normal;
   color: white;
 }
-
 .overlay {
   position: absolute;
   top: 0;
