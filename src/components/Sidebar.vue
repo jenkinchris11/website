@@ -21,6 +21,10 @@
   background-color: #f9f9f9;
   border: none;
   font-weight: 300;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
 
 .sidebar :deep(.v-list-item) {
@@ -28,10 +32,18 @@
   padding: 0.25rem 0.5rem;
   font-weight: 300;
   background: transparent;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
 
 .sidebar :deep(.v-list-item:hover) {
   background-color: rgba(0, 0, 0, 0.04);
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
 
 </style>
