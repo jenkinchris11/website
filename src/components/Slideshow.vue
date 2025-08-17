@@ -230,7 +230,7 @@ body.dark .slide-content {
     font-family: 'Teko', sans-serif;
     font-size: 2.5rem;
     line-height: 1.2;
-    color: var(--accent-light);
+    color: rgba(0, 0, 0, 1);
     margin-bottom: 1rem;
     transition: color 0.5s ease;
 }
@@ -261,13 +261,14 @@ body.dark .slide-content h1 {
 
 .clickable-area {
     position: absolute;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.1);
     transition: background 0.3s ease, backdrop-filter 0.3s ease;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
+    font-color: white;
     font-weight: bold;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     opacity: 0;
@@ -281,7 +282,7 @@ body.dark .slide-content h1 {
 }
 
 .clickable-area:hover {
-    background: rgba(0, 216, 255, 0.3);
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .controls {
