@@ -8,8 +8,10 @@
       <div class="home fade-up">
         <h1 class="title">Andrew Jenkin Sculpture</h1>
         <p>{{ tagline }}</p>
+        <div>
+          <Slideshow />
+        </div>
       </div>
-      <Slideshow />
     </video-background>
   </section>
 </template>
