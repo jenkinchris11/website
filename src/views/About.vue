@@ -1,4 +1,6 @@
 <template>
+  <div class="page fade-up">
+    <div class="about-grid">
   <div class="page container fade-up">
     <div class="about-grid">
     <div class="about-content">
@@ -24,23 +26,23 @@ import aboutPic from '../assets/About/AboutPic.jpg'
 
 <style scoped>
 .page {
-  padding: 1rem;
+  margin-left: -2rem;
+  padding: 1rem 2rem 1rem 0;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
 }
-
 .about-grid {
   display: grid;
   grid-template-columns: auto 1fr;
+  column-gap: 4rem;
   column-gap: 1rem;
 }
 .about-content {
   display: flex;
   align-items: flex-start;
 }
-
 .about-image {
   max-width: 300px;
   max-width: 200px;
