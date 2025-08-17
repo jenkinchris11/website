@@ -34,6 +34,7 @@ import aboutPic from '../assets/About/AboutPic.jpg'
   display: grid;
   grid-template-columns: auto 1fr;
   column-gap: 1rem;
+}
 .about-content {
   display: flex;
   align-items: flex-start;
