@@ -8,9 +8,7 @@
       <div class="home fade-up">
         <h1 class="title">Andrew Jenkin Sculpture</h1>
         <p>{{ tagline }}</p>
-        <div>
           <Slideshow />
-        </div>
       </div>
     </video-background>
   </section>
@@ -44,8 +42,7 @@ const { tagline } = defineProps({
 }
 .home {
   position: absolute;
-  top: 45%;
-  left: 40%;
+  top: 15%;
   transform: translate(-50%, -50%);
   text-align: center;
   color: white;
