@@ -1,5 +1,6 @@
 <template>
   <div class="page container fade-up">
+    <div class="about-grid">
     <div class="about-content">
       <img class="about-image" :src="aboutPic" alt="Andrew Jenkin" />
       <div class="about-text">
@@ -29,6 +30,10 @@ import aboutPic from '../assets/About/AboutPic.jpg'
   font-style: normal;
 }
 
+.about-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1rem;
 .about-content {
   display: flex;
   align-items: flex-start;
