@@ -1,8 +1,18 @@
 <script setup>
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+const isHome = computed(() => route.path === '/')
 </script>
 
 <template>
-  <v-navigation-drawer permanent class="sidebar" elevation="0">
+  <v-navigation-drawer
+    permanent
+    class="sidebar"
+    elevation="0"
+    :class="{ 'home-nav': isHome }"
+  >
     <v-list>
       <v-list-item title="Andrew Jenkin Sculpture" class="text-h3" style="font-size: 1.2rem;"></v-list-item>
       <v-list-item to="/" title="Home"></v-list-item>
@@ -27,6 +37,20 @@ font-size: 1.2rem;
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
+}
+
+.home-nav {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.home-nav :deep(.v-list-item-title),
+.home-nav :deep(.v-list-item) {
+  color: #fff !important;
+}
+
+.home-nav :deep(.v-list-item:hover) {
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .sidebar :deep(.v-list-item) {
