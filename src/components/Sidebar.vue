@@ -16,7 +16,9 @@
 </template>
 
 <style scoped>
-
+.v-list-item-title{
+font-size: 1.2rem;
+}
 .sidebar {
   background-color: #f9f9f9;
   border: none;
