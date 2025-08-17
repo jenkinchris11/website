@@ -1,6 +1,7 @@
 <template>
   <div class="page container fade-up">
     <div class="about-grid">
+    <div class="about-content">
       <img class="about-image" :src="aboutPic" alt="Andrew Jenkin" />
       <div class="about-text">
         <h1>About Me</h1>
@@ -33,10 +34,14 @@ import aboutPic from '../assets/About/AboutPic.jpg'
   display: grid;
   grid-template-columns: auto 1fr;
   column-gap: 1rem;
+.about-content {
+  display: flex;
   align-items: flex-start;
 }
 
 .about-image {
   max-width: 300px;
+  max-width: 200px;
+  margin-right: 1rem;
 }
 </style>
