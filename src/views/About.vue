@@ -1,5 +1,5 @@
 <template>
-  <div class="page container fade-up">
+  <div class="page fade-up">
     <div class="about-grid">
       <img class="about-image" :src="aboutPic" alt="Andrew Jenkin" />
       <div class="about-text">
@@ -22,7 +22,8 @@ import aboutPic from '../assets/About/AboutPic.jpg'
 
 <style scoped>
 .page {
-  padding: 1rem;
+  margin-left: -2rem;
+  padding: 1rem 2rem 1rem 0;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-weight: <weight>;
@@ -32,7 +33,7 @@ import aboutPic from '../assets/About/AboutPic.jpg'
 .about-grid {
   display: grid;
   grid-template-columns: auto 1fr;
-  column-gap: 1rem;
+  column-gap: 4rem;
   align-items: flex-start;
 }
 
