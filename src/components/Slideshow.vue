@@ -189,7 +189,7 @@ body.dark {
 }
 
 .slideshow-container {
-    width: 100%;
+    min-width: 100vw;
     min-height: 100vh;
     display: flex;
     overflow: hidden;
