@@ -196,7 +196,6 @@ body.dark {
     justify-content: center;
     overflow: hidden;
     position: relative;
-    margin-top: -50px;
 }
 
 .slide {
