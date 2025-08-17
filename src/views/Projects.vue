@@ -38,12 +38,20 @@ const projects = [
 <style scoped>
 .page {
   padding: 1rem;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
 
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
 
 .project-card {
@@ -51,6 +59,10 @@ const projects = [
   border: 1px solid #eee;
   padding: 1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
 
 .project-card img {
@@ -58,10 +70,18 @@ const projects = [
   height: auto;
   display: block;
   margin-bottom: 0.5rem;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
 
 .project-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
 </style>
