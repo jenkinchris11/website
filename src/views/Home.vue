@@ -65,7 +65,7 @@ const { tagline } = defineProps({
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.8);
   pointer-events: none;
 }
 </style>
