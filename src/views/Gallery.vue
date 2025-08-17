@@ -64,6 +64,14 @@ for (const [path, src] of Object.entries(modules)) {
   font-style: normal;
 }
 
+.gallery-section {
+  margin-bottom: 2rem;
+}
+
+.gallery-section h2 {
+  margin-bottom: 1rem;
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
