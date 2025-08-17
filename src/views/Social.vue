@@ -8,5 +8,9 @@
 <style scoped>
 .page {
   padding: 1rem;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
 </style>
