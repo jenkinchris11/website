@@ -4,6 +4,7 @@
       :src="backgroundVideo"
       style="height: 100vh;"
     >
+      <div class="overlay" />
       <div class="home fade-up">
         <h1 class="title">Andrew Jenkin Sculpture</h1>
         <p>{{ tagline }}</p>
@@ -40,6 +41,7 @@ const { tagline } = defineProps({
 .home {
   position: relative;
   text-align: center;
+  color: white;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-weight: <weight>;
@@ -52,5 +54,15 @@ const { tagline } = defineProps({
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
+  color: white;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
 }
 </style>
