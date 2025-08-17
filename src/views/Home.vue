@@ -4,7 +4,7 @@
     :style="{ backgroundImage: imageUrl ? `url(${imageUrl})` : undefined }"
   >
     <div class="home fade-up">
-      <h1 class="title">Welcome to My Website</h1>
+      <h1 class="title">Andrew Jenkin Sculpture</h1>
       <p>{{ tagline }}</p>
     </div>
   </section>
@@ -18,7 +18,7 @@ const { imageUrl, tagline } = defineProps({
   },
   tagline: {
     type: String,
-    default: "Explore the sidebar to learn more.",
+    default: "",
   },
 });
 </script>
