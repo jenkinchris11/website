@@ -1,21 +1,20 @@
 <template>
   <section class="hero">
-    <video
-      class="background-video"
-      autoplay
-      muted
-      loop
-      playsinline
+    <video-background
       :src="backgroundVideo"
-    ></video>
-    <div class="home fade-up">
-      <h1 class="title">Andrew Jenkin Sculpture</h1>
-      <p>{{ tagline }}</p>
-    </div>
+      style="height: 100vh;"
+    >
+      <div class="overlay" />
+      <div class="home fade-up">
+        <h1 class="title">Andrew Jenkin Sculpture</h1>
+        <p>{{ tagline }}</p>
+      </div>
+    </video-background>
   </section>
 </template>
 
 <script setup>
+import VideoBackground from "vue-responsive-video-background-player";
 import backgroundVideo from "../assets/Video/A Certain Ratio.mp4";
 
 const { tagline } = defineProps({
@@ -42,6 +41,7 @@ const { tagline } = defineProps({
 .home {
   position: relative;
   text-align: center;
+  color: white;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-weight: <weight>;
@@ -54,15 +54,16 @@ const { tagline } = defineProps({
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
+  color: white;
 }
 
-.background-video {
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  z-index: -1;
+  background: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
 }
 </style>
