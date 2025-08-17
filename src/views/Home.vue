@@ -9,6 +9,7 @@
         <h1 class="title">Andrew Jenkin Sculpture</h1>
         <p>{{ tagline }}</p>
           <Slideshow />
+        </div>
       </div>
     </video-background>
   </section>
