@@ -5,6 +5,7 @@
       autoplay
       muted
       :loop="true"
+      loop
       playsinline
       :src="backgroundVideo"
     ></video>
