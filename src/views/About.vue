@@ -35,6 +35,7 @@ import aboutPic from '../assets/About/AboutPic.jpg'
 }
 
 .about-image {
+  max-width: 300px;
   max-width: 200px;
   margin-right: 1rem;
 }
