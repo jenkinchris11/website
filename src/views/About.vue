@@ -12,6 +12,7 @@
           Having spent many years constructing objects from plans, patterns and templates, I have developed a passion of applying these processes to my own creative endeavours.
           Over the last two years of my formal art training I have spent time with the much-acclaimed art sculptor Charles Hadcock, assisting him in his studio allowed me a privileged insight in the practice of a professional sculptor.
           Which has served to give me a desire to create larger scale works and a thirst to acquire commissions for public art sculpture.</p>
+        </div>
       </div>
     </div>
   </div>
