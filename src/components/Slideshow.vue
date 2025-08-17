@@ -216,6 +216,7 @@ body.dark {
 .slide-content {
     background-color: var(--card-bg-light);
     padding: 2rem;
+    color: rgba(0, 0, 0, 1);
     border-radius: 1rem;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     transition: background-color 0.5s ease;
@@ -263,7 +264,7 @@ body.dark .slide-content h1 {
     position: absolute;
     background: rgba(0, 0, 0, 0.1);
     transition: background 0.3s ease, backdrop-filter 0.3s ease;
-    color: white;
+    color: black;
     display: flex;
     align-items: center;
     justify-content: center;
