@@ -1,8 +1,13 @@
 <template>
-  <section
-    class="hero"
-    :style="{ backgroundImage: imageUrl ? `url(${imageUrl})` : undefined }"
-  >
+  <section class="hero">
+    <video
+      class="background-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      :src="backgroundVideo"
+    ></video>
     <div class="home fade-up">
       <h1 class="title">Andrew Jenkin Sculpture</h1>
       <p>{{ tagline }}</p>
@@ -11,11 +16,9 @@
 </template>
 
 <script setup>
-const { imageUrl, tagline } = defineProps({
-  imageUrl: {
-    type: String,
-    default: "",
-  },
+import backgroundVideo from "../assets/Video/A Certain Ratio.mp4";
+
+const { tagline } = defineProps({
   tagline: {
     type: String,
     default: "",
@@ -25,18 +28,19 @@ const { imageUrl, tagline } = defineProps({
 
 <style scoped>
 .hero {
+  position: relative;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
 }
 .home {
+  position: relative;
   text-align: center;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
@@ -50,5 +54,15 @@ const { imageUrl, tagline } = defineProps({
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 </style>
