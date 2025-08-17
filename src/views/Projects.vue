@@ -9,30 +9,33 @@
       >
         <img :src="project.image" :alt="project.title" />
         <h2>{{ project.title }}</h2>
-        <p>{{ project.description }}</p>
       </article>
     </div>
   </div>
 </template>
 
 <script setup>
-const projects = [
+// Import all images from project folders and use the first image of each
+// folder as the card preview image.
+const modules = import.meta.glob(
+  "../assets/Projects/*/*.{jpg,jpeg,JPG,JPEG,png,PNG}",
   {
-    title: "Project One",
-    description: "Description for project one.",
-    image: "https://via.placeholder.com/400x300",
-  },
-  {
-    title: "Project Two",
-    description: "Description for project two.",
-    image: "https://via.placeholder.com/400x300",
-  },
-  {
-    title: "Project Three",
-    description: "Description for project three.",
-    image: "https://via.placeholder.com/400x300",
-  },
-];
+    eager: true,
+    import: "default",
+  }
+);
+
+const projectMap = {};
+for (const [path, src] of Object.entries(modules)) {
+  const parts = path.split("/");
+  const folder = parts[parts.length - 2];
+  (projectMap[folder] ||= []).push(src);
+}
+
+const projects = Object.entries(projectMap).map(([title, images]) => ({
+  title,
+  image: images[0],
+}));
 </script>
 
 <style scoped>
