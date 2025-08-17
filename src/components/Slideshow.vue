@@ -194,6 +194,7 @@ body.dark {
     display: flex;
     overflow: hidden;
     position: relative;
+    justify-content: space-around;
 }
 
 .slide {
