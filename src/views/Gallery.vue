@@ -1,15 +1,22 @@
 <template>
   <div class="page container fade-up">
     <h1>Gallery</h1>
-    <div class="gallery-grid">
-      <div
-        v-for="(image, index) in images"
-        :key="index"
-        class="gallery-item"
-      >
-        <img :src="image.src" :alt="image.alt" />
-        <div class="overlay">
-          <span>{{ image.caption }}</span>
+    <div
+      v-for="(sectionImages, folder) in galleries"
+      :key="folder"
+      class="gallery-section"
+    >
+      <h2>{{ folder }}</h2>
+      <div class="gallery-grid">
+        <div
+          v-for="(image, index) in sectionImages"
+          :key="index"
+          class="gallery-item"
+        >
+          <img :src="image.src" :alt="image.alt" />
+          <div class="overlay">
+            <span>{{ image.caption }}</span>
+          </div>
         </div>
       </div>
     </div>
@@ -17,28 +24,32 @@
 </template>
 
 <script setup>
-const images = [
-  {
-    src: "https://via.placeholder.com/400x300",
-    alt: "Placeholder 1",
-    caption: "Caption 1",
-  },
-  {
-    src: "https://via.placeholder.com/400x300",
-    alt: "Placeholder 2",
-    caption: "Caption 2",
-  },
-  {
-    src: "https://via.placeholder.com/400x300",
-    alt: "Placeholder 3",
-    caption: "Caption 3",
-  },
-];
+const modules = import.meta.glob("../assets/*/*.jpg", {
+  eager: true,
+  import: "default",
+});
+const galleries = {};
+
+for (const [path, src] of Object.entries(modules)) {
+  const parts = path.split("/");
+  const folder = parts[parts.length - 2];
+  const file = parts[parts.length - 1];
+  const caption = file.replace(/\.[^/.]+$/, "");
+  (galleries[folder] ||= []).push({ src, alt: caption, caption });
+}
 </script>
 
 <style scoped>
 .page {
   padding: 1rem;
+}
+
+.gallery-section {
+  margin-bottom: 2rem;
+}
+
+.gallery-section h2 {
+  margin-bottom: 1rem;
 }
 
 .gallery-grid {
