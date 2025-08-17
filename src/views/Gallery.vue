@@ -28,7 +28,6 @@ const modules = import.meta.glob("../assets/*/*.jpg", {
   eager: true,
   import: "default",
 });
-const modules = import.meta.glob("../assets/*/*.jpg", { eager: true });
 const galleries = {};
 
 for (const [path, src] of Object.entries(modules)) {
