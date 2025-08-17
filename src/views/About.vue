@@ -24,7 +24,7 @@ import aboutPic from '../assets/About/AboutPic.jpg'
 .page {
   padding: 1rem;
   margin-left: -2rem;
-  padding: 1rem 2rem 1rem 0;
+  padding: 1rem 2rem 1rem 2rem;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-weight: <weight>;
@@ -39,6 +39,6 @@ import aboutPic from '../assets/About/AboutPic.jpg'
 }
 
 .about-image {
-  max-width: 300px;
+  max-width: 500px;
 }
 </style>
