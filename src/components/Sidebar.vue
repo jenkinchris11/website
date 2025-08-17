@@ -4,7 +4,7 @@
 <template>
   <v-navigation-drawer permanent class="sidebar" elevation="0">
     <v-list>
-      <v-list-item title="Andrew Jenkin Sculpture" class="text-h3" style="size:20px;"></v-list-item>
+      <v-list-item title="Andrew Jenkin Sculpture" class="text-h3" style="font-size: 1.2rem;"></v-list-item>
       <v-list-item to="/" title="Home"></v-list-item>
       <v-list-item to="/about" title="About"></v-list-item>
       <v-list-item to="/gallery" title="Gallery"></v-list-item>
