@@ -24,7 +24,7 @@
 </template>
 
 <script setup>
-const modules = import.meta.glob("../assets/*/*.jpg", {
+const modules = import.meta.glob("../assets/Gallery/*/*.jpg", {
   eager: true,
   import: "default",
 });
