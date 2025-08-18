@@ -69,8 +69,8 @@ const { mdAndDown } = useDisplay();
 
 @media (max-width: 600px) {
   .title {
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0%;
+    transform: translateX(-0%);
   }
 }
 .overlay {
