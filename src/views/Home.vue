@@ -71,7 +71,7 @@ const { mdAndDown } = useDisplay();
   .home {
     width: 100%;
     justify-content: center;
-
+    left: 0;
   }
 }
 
