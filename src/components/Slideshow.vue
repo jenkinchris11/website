@@ -33,7 +33,7 @@ const slideData = [
     headline: 'Featured Projects',
     description: 'Highlights from my project portfolio.',
     clickableAreas: [
-      { top: '5%', left: '10%', width: '80%', height: '90%', href: '/project', text: 'Projects' }
+      { top: '5%', left: '10%', width: '80%', height: '90%', href: '/projects', text: 'Projects' }
     ]
   },
   {
