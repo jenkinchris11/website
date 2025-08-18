@@ -1,22 +1,6 @@
 <template>
   <div>
     <div class="slideshow-container"></div>
-
-    <div id="projects" class="content-section">
-    </div>
-    <div id="gallery" class="content-section">
-    </div>
-
-    <div class="controls">
-      <button id="prev-btn" class="nav-btn" aria-label="Previous Slide"><i class="fas fa-arrow-left"></i></button>
-      <button id="theme-toggle" class="nav-btn" aria-label="Toggle Theme">
-        <i class="fas fa-moon"></i>
-        <i class="fas fa-sun"></i>
-      </button>
-      <button id="next-btn" class="nav-btn" aria-label="Next Slide"><i class="fas fa-arrow-right"></i></button>
-    </div>
-
-    <button id="scrollTopBtn" title="Go to top" aria-label="Scroll to Top"><i class="fas fa-arrow-up"></i></button>
   </div>
 </template>
 
