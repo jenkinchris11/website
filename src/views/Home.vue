@@ -7,8 +7,6 @@
       <div class="overlay" />
       <div class="home fade-up">
         <h1 class="title">Andrew Jenkin Sculpture</h1>
-        <p>{{ tagline }}</p>
-        <Slideshow v-if="!mdAndDown" />
       </div>
     </video-background>
   </section>
