@@ -31,6 +31,11 @@ const { mdAndDown } = useDisplay();
 </script>
 
 <style scoped>
+* {
+  background: black;
+}
+  
+  
 .hero {
   position: relative;
   min-height: 100vh;
