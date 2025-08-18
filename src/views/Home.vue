@@ -55,12 +55,30 @@ const { mdAndDown } = useDisplay();
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   color: white;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 0 1rem;
+  }
+  .home {
+    width: 100%;
+  }
+}
+
+@media (min-width: 601px) {
+  .home {
+    width: 60%;
+  }
 }
 
 @media (min-width: 600px) {
