@@ -1,17 +1,35 @@
 <script setup>
-import { computed } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import { useDisplay } from 'vuetify'
 
 const route = useRoute()
 const isHome = computed(() => route.path === '/')
+
+const { mdAndDown } = useDisplay()
+const drawer = ref(!mdAndDown.value)
+watch(mdAndDown, val => { drawer.value = !val })
 </script>
 
 <template>
+  <v-app-bar
+    v-if="mdAndDown"
+    flat
+    class="mobile-bar"
+    :class="{ 'home-nav': isHome }"
+    app
+  >
+    <v-app-bar-nav-icon @click="drawer = !drawer" />
+    <v-toolbar-title>Andrew Jenkin Sculpture</v-toolbar-title>
+  </v-app-bar>
   <v-navigation-drawer
-    permanent
+    v-model="drawer"
+    :permanent="!mdAndDown"
+    :temporary="mdAndDown"
     class="sidebar"
     elevation="0"
     :class="{ 'home-nav': isHome }"
+    app
   >
     <v-list>
       <v-list-item title="Andrew Jenkin Sculpture" class="text-h3" style="font-size: 1.2rem;"></v-list-item>
@@ -39,13 +57,20 @@ font-size: 1.2rem;
   font-style: normal;
 }
 
+.mobile-bar {
+  background-color: #f9f9f9;
+  font-family: "Playfair Display", serif;
+}
+
 .home-nav {
   background-color: #000 !important;
   color: #fff !important;
 }
 
 .home-nav :deep(.v-list-item-title),
-.home-nav :deep(.v-list-item) {
+.home-nav :deep(.v-list-item),
+.home-nav :deep(.v-toolbar-title),
+.home-nav :deep(.v-btn) {
   color: #fff !important;
 }
 

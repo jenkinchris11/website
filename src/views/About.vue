@@ -41,4 +41,26 @@ import aboutPic from '../assets/About/AboutPic.jpg'
 .about-image {
   max-width: 500px;
 }
+
+@media (max-width: 600px) {
+  .page {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    row-gap: 1.5rem;
+    text-align: center;
+  }
+
+  .about-image {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .about-text {
+    text-align: left;
+  }
+}
 </style>
