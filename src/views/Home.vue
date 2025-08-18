@@ -54,7 +54,8 @@ const { mdAndDown } = useDisplay();
   font-weight: <weight>;
   font-style: normal;
 }
-.title {
+  @media (min-width: 600px) {
+  .title {
   font-size: 3rem;
   margin-bottom: 1rem;
   font-family: "Playfair Display", serif;
@@ -66,10 +67,9 @@ const { mdAndDown } = useDisplay();
   position: absolute;
   left: 40%;
 }
-
 @media (max-width: 600px) {
   .title {
-    right: 50%;
+    left: 50%;
   }
 }
 .overlay {
