@@ -8,7 +8,7 @@
       <div class="home fade-up">
         <h1 class="title">Andrew Jenkin Sculpture</h1>
         <p>{{ tagline }}</p>
-          <Slideshow />
+        <Slideshow v-if="!mdAndDown" />
       </div>
     </video-background>
   </section>
@@ -18,6 +18,7 @@
 import VideoBackground from "vue-responsive-video-background-player";
 import backgroundVideo from "../assets/Video/A Certain Ratio.mp4";
 import Slideshow from "../components/Slideshow.vue";
+import { useDisplay } from "vuetify";
 
 const { tagline } = defineProps({
   tagline: {
@@ -25,6 +26,8 @@ const { tagline } = defineProps({
     default: "",
   },
 });
+
+const { mdAndDown } = useDisplay();
 </script>
 
 <style scoped>
