@@ -66,6 +66,13 @@ const { mdAndDown } = useDisplay();
   position: absolute;
   left: 40%;
 }
+
+@media (max-width: 600px) {
+  .title {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
 .overlay {
   position: absolute;
   top: 0;
