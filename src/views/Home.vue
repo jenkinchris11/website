@@ -66,6 +66,7 @@ const { mdAndDown } = useDisplay();
   top: 100px;
   position: absolute;
   left: 40%;
+  }
 }
 @media (max-width: 600px) {
   .title {
