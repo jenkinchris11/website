@@ -45,7 +45,8 @@ const { mdAndDown } = useDisplay();
 }
 .home {
   position: absolute;
-  top: 15%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   color: white;
@@ -54,23 +55,16 @@ const { mdAndDown } = useDisplay();
   font-weight: <weight>;
   font-style: normal;
 }
-  @media (min-width: 600px) {
+
+@media (min-width: 600px) {
   .title {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-  color: white;
-  top: 100px;
-  position: absolute;
-  left: 40%;
-  }
-}
-@media (max-width: 600px) {
-  .title {
-    left: 50%;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    color: white;
   }
 }
 .overlay {
