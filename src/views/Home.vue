@@ -34,9 +34,6 @@ const { mdAndDown } = useDisplay();
 .hero {
   position: relative;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
@@ -44,6 +41,11 @@ const { mdAndDown } = useDisplay();
   font-style: normal;
 }
 .home {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   position: absolute;
   inset: 0;
   display: flex;
