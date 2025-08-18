@@ -66,7 +66,7 @@ const { mdAndDown } = useDisplay();
 
 @media (max-width: 600px) {
   .hero {
-    padding: 0 1rem;
+    padding: 0;
   }
   .home {
     width: 100%;
