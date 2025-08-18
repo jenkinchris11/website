@@ -31,7 +31,7 @@ const { mdAndDown } = useDisplay();
 </script>
 
 <style scoped>
-* {
+body{
   background: black;
 }
   
