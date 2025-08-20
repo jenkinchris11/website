@@ -7,6 +7,35 @@
         :key="index"
         class="gallery-item"
         :class="{ 'crazy-frame': folder === 'Crazy Frames' }"
+        @click="openLightbox(index)"
+      >
+        <img
+          :src="image.src"
+          :alt="image.alt"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div
+    v-if="lightboxOpen"
+    class="lightbox"
+    @click.self="closeLightbox"
+  >
+    <button class="nav prev" @click.stop="prevImage">‹</button>
+    <img
+      :src="images[currentIndex].src"
+      :alt="images[currentIndex].alt"
+      class="lightbox-image"
+    />
+    <button class="nav next" @click.stop="nextImage">›</button>
+  </div>
+</template>
+
+<script setup>
+import { computed, onMounted, ref, watch, nextTick } from 'vue'
       >
         <img :src="image.src" :alt="image.alt" />
         <div class="overlay">
@@ -69,6 +98,50 @@ onMounted(() => {
   }
 })
 
+const lightboxOpen = ref(false)
+const currentIndex = ref(0)
+
+function openLightbox(index) {
+  currentIndex.value = index
+  lightboxOpen.value = true
+}
+
+function closeLightbox() {
+  lightboxOpen.value = false
+}
+
+function prevImage() {
+  currentIndex.value = (currentIndex.value - 1 + images.value.length) % images.value.length
+}
+
+function nextImage() {
+  currentIndex.value = (currentIndex.value + 1) % images.value.length
+}
+
+function apply3DEffect(img) {
+  const handler = event => {
+    const rect = img.getBoundingClientRect()
+    const x = event.clientX - rect.left - rect.width / 2
+    const y = event.clientY - rect.top - rect.height / 2
+    const rotationY = (x * maxRotationDegreesX) / (rect.width / 2)
+    const rotationX = (-y * maxRotationDegreesY) / (rect.height / 2)
+    const transform = `perspective(${perspectivePx}px) rotate3d(1, 0, 0, ${rotationX}deg) rotate3d(0, 1, 0, ${rotationY}deg)`
+    img.style.transform = transform
+  }
+  const reset = () => {
+    img.style.transform = `perspective(${perspectivePx}px)`
+  }
+  img.addEventListener('mousemove', handler)
+  img.addEventListener('mouseleave', reset)
+}
+
+watch(lightboxOpen, async val => {
+  if (val && props.folder === 'Crazy Frames') {
+    await nextTick()
+    const img = document.querySelector('.lightbox-image')
+    if (img) apply3DEffect(img)
+  }
+})
 </script>
 
 <style scoped>
@@ -98,6 +171,8 @@ onMounted(() => {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-weight: 400;
+  font-style: normal;
+  cursor: pointer;
   font-weight: <weight>;
   font-style: normal;
 }
@@ -111,6 +186,45 @@ onMounted(() => {
   font-style: normal;
   transition: transform 0.1s ease-out;
   transform-style: preserve-3d;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.lightbox-image {
+  max-width: 90%;
+  max-height: 90%;
+  transition: transform 0.1s ease-out;
+  transform-style: preserve-3d;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 3rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.nav.prev {
+  left: 1rem;
+}
+
+.nav.next {
+  right: 1rem;
+}
+
   font-weight: <weight>;
   font-style: normal;
 }
