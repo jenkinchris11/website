@@ -36,18 +36,6 @@
 
 <script setup>
 import { computed, onMounted, ref, watch, nextTick } from 'vue'
-  
-        <img :src="image.src" :alt="image.alt" />
-        <div class="overlay">
-          <span>{{ image.caption }}</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
-
-<script setup>
-import { computed, onMounted } from 'vue'
 const props = defineProps({
   folder: {
     type: String,
