@@ -4,6 +4,7 @@
       :src="backgroundVideo"
       style="height: 100vh;"
     >
+      <div class="overlay" />
       <div class="home fade-up">
         <h1 class="title">Andrew Jenkin Sculpture</h1>
       </div>
@@ -95,7 +96,7 @@ const { mdAndDown } = useDisplay();
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.2);
   pointer-events: none;
 }
 </style>
