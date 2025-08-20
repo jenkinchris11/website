@@ -35,7 +35,7 @@ const { mdAndDown } = useDisplay();
   overflow: hidden;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 400;
   font-style: normal;
 }
 .home {
@@ -58,7 +58,7 @@ const { mdAndDown } = useDisplay();
   color: white;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -85,7 +85,7 @@ const { mdAndDown } = useDisplay();
     margin-bottom: 1rem;
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
-    font-weight: <weight>;
+    font-weight: 400;
     font-style: normal;
     color: white;
   }

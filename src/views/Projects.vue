@@ -43,7 +43,7 @@ const projects = Object.entries(projectMap).map(([title, images]) => ({
   padding: 1rem;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -53,7 +53,7 @@ const projects = Object.entries(projectMap).map(([title, images]) => ({
   gap: 1rem;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -64,7 +64,7 @@ const projects = Object.entries(projectMap).map(([title, images]) => ({
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -75,7 +75,7 @@ const projects = Object.entries(projectMap).map(([title, images]) => ({
   margin-bottom: 0.5rem;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -84,7 +84,7 @@ const projects = Object.entries(projectMap).map(([title, images]) => ({
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 400;
   font-style: normal;
 }
 </style>

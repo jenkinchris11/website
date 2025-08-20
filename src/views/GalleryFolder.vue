@@ -1,18 +1,13 @@
 <template>
   <div class="page container fade-up">
-    <h1>Gallery</h1>
-    <div
-      v-for="(sectionImages, folder) in galleries"
-      :key="folder"
-      class="gallery-section"
-    >
-      <h2>{{ folder }}</h2>
-      <div class="gallery-grid">
+    <h1>{{ folder }}</h1>
+    <div class="gallery-grid">
       <div
-        v-for="(image, index) in sectionImages"
+        v-for="(image, index) in images"
         :key="index"
         class="gallery-item"
-        @click="openLightbox(folder, index)"
+        :class="{ 'crazy-frame': folder === 'Crazy Frames' }"
+        @click="openLightbox(index)"
       >
         <img
           :src="image.src"
@@ -20,7 +15,6 @@
           loading="lazy"
           decoding="async"
         />
-      </div>
       </div>
     </div>
   </div>
@@ -32,8 +26,8 @@
   >
     <button class="nav prev" @click.stop="prevImage">‹</button>
     <img
-      :src="currentImages[currentIndex].src"
-      :alt="currentImages[currentIndex].alt"
+      :src="images[currentIndex].src"
+      :alt="images[currentIndex].alt"
       class="lightbox-image"
     />
     <button class="nav next" @click.stop="nextImage">›</button>
@@ -41,30 +35,61 @@
 </template>
 
 <script setup>
-import { ref, computed, watch, nextTick } from 'vue'
+import { computed, onMounted, ref, watch, nextTick } from 'vue'
+const props = defineProps({
+  folder: {
+    type: String,
+    required: true,
+  },
+})
 
 const modules = import.meta.glob("../assets/Gallery/*/*.jpg", {
   eager: true,
   import: "default",
-});
-const galleries = {};
+})
 
-for (const [path, src] of Object.entries(modules)) {
-  const parts = path.split("/");
-  const folder = parts[parts.length - 2];
-  const file = parts[parts.length - 1];
-  const caption = file.replace(/\.[^/.]+$/, "");
-  (galleries[folder] ||= []).push({ src, alt: caption, caption });
-}
+const images = computed(() => {
+  const list = []
+  for (const [path, src] of Object.entries(modules)) {
+    if (path.includes(`/Gallery/${props.folder}/`)) {
+      const parts = path.split('/')
+      const file = parts[parts.length - 1]
+      const caption = file.replace(/\.[^/.]+$/, '')
+      list.push({ src, alt: caption, caption })
+    }
+  }
+  return list
+})
+
+const maxRotationDegreesX = 60
+const maxRotationDegreesY = 60
+const perspectivePx = 600
+
+onMounted(() => {
+  if (props.folder === 'Crazy Frames') {
+    const items = document.querySelectorAll('.crazy-frame')
+    items.forEach(item => {
+      const img = item.querySelector('img')
+      item.addEventListener('mousemove', event => {
+        const rect = item.getBoundingClientRect()
+        const x = event.clientX - rect.left - rect.width / 2
+        const y = event.clientY - rect.top - rect.height / 2
+        const rotationY = (x * maxRotationDegreesX) / (rect.width / 2)
+        const rotationX = (-y * maxRotationDegreesY) / (rect.height / 2)
+        const transform = `perspective(${perspectivePx}px) rotate3d(1, 0, 0, ${rotationX}deg) rotate3d(0, 1, 0, ${rotationY}deg)`
+        img.style.transform = transform
+      })
+      item.addEventListener('mouseleave', () => {
+        img.style.transform = `perspective(${perspectivePx}px)`
+      })
+    })
+  }
+})
 
 const lightboxOpen = ref(false)
-const currentFolder = ref('')
 const currentIndex = ref(0)
 
-const currentImages = computed(() => galleries[currentFolder.value] || [])
-
-function openLightbox(folder, index) {
-  currentFolder.value = folder
+function openLightbox(index) {
   currentIndex.value = index
   lightboxOpen.value = true
 }
@@ -74,19 +99,14 @@ function closeLightbox() {
 }
 
 function prevImage() {
-  const len = currentImages.value.length
-  currentIndex.value = (currentIndex.value - 1 + len) % len
+  currentIndex.value = (currentIndex.value - 1 + images.value.length) % images.value.length
 }
 
 function nextImage() {
-  const len = currentImages.value.length
-  currentIndex.value = (currentIndex.value + 1) % len
+  currentIndex.value = (currentIndex.value + 1) % images.value.length
 }
 
 function apply3DEffect(img) {
-  const maxRotationDegreesX = 60
-  const maxRotationDegreesY = 60
-  const perspectivePx = 600
   const handler = event => {
     const rect = img.getBoundingClientRect()
     const x = event.clientX - rect.left - rect.width / 2
@@ -104,7 +124,7 @@ function apply3DEffect(img) {
 }
 
 watch(lightboxOpen, async val => {
-  if (val && currentFolder.value === 'Crazy Frames') {
+  if (val && props.folder === 'Crazy Frames') {
     await nextTick()
     const img = document.querySelector('.lightbox-image')
     if (img) apply3DEffect(img)
@@ -115,22 +135,6 @@ watch(lightboxOpen, async val => {
 <style scoped>
 .page {
   padding: 1rem;
-  font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.gallery-section {
-  margin-bottom: 2rem;
-  font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.gallery-section h2 {
-  margin-bottom: 1rem;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -164,6 +168,8 @@ watch(lightboxOpen, async val => {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  transition: transform 0.1s ease-out;
+  transform-style: preserve-3d;
 }
 
 .lightbox {
@@ -201,5 +207,9 @@ watch(lightboxOpen, async val => {
 
 .nav.next {
   right: 1rem;
+}
+
+.crazy-frame {
+  perspective: 600px;
 }
 </style>
