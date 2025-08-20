@@ -74,7 +74,6 @@ font-size: 1.2rem;
   font-weight: 300;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
   font-style: normal;
 }
 
@@ -106,7 +105,6 @@ font-size: 1.2rem;
   background: transparent;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
   font-style: normal;
 }
 
@@ -114,7 +112,6 @@ font-size: 1.2rem;
   background-color: rgba(0, 0, 0, 0.04);
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
   font-style: normal;
 }
 

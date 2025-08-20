@@ -10,7 +10,7 @@
   padding: 1rem;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 400;
   font-style: normal;
 }
 </style>

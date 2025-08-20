@@ -6,6 +6,7 @@
         v-for="(image, index) in images"
         :key="index"
         class="gallery-item"
+        :class="{ 'crazy-frame': folder === 'Crazy Frames' }"
       >
         <img :src="image.src" :alt="image.alt" />
         <div class="overlay">
@@ -17,6 +18,7 @@
 </template>
 
 <script setup>
+import { computed, onMounted } from 'vue'
 import { computed } from 'vue'
 const props = defineProps({
   folder: {
@@ -42,6 +44,32 @@ const images = computed(() => {
   }
   return list
 })
+
+const maxRotationDegreesX = 60
+const maxRotationDegreesY = 60
+const perspectivePx = 600
+
+onMounted(() => {
+  if (props.folder === 'Crazy Frames') {
+    const items = document.querySelectorAll('.crazy-frame')
+    items.forEach(item => {
+      const img = item.querySelector('img')
+      item.addEventListener('mousemove', event => {
+        const rect = item.getBoundingClientRect()
+        const x = event.clientX - rect.left - rect.width / 2
+        const y = event.clientY - rect.top - rect.height / 2
+        const rotationY = (x * maxRotationDegreesX) / (rect.width / 2)
+        const rotationX = (-y * maxRotationDegreesY) / (rect.height / 2)
+        const transform = `perspective(${perspectivePx}px) rotate3d(1, 0, 0, ${rotationX}deg) rotate3d(0, 1, 0, ${rotationY}deg)`
+        img.style.transform = transform
+      })
+      item.addEventListener('mouseleave', () => {
+        img.style.transform = `perspective(${perspectivePx}px)`
+      })
+    })
+  }
+})
+
 </script>
 
 <style scoped>
@@ -49,6 +77,7 @@ const images = computed(() => {
   padding: 1rem;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
+  font-weight: 400;
   font-weight: <weight>;
   font-style: normal;
 }
@@ -59,6 +88,7 @@ const images = computed(() => {
   gap: 1rem;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
+  font-weight: 400;
   font-weight: <weight>;
   font-style: normal;
 }
@@ -68,6 +98,7 @@ const images = computed(() => {
   overflow: hidden;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
+  font-weight: 400;
   font-weight: <weight>;
   font-style: normal;
 }
@@ -77,6 +108,10 @@ const images = computed(() => {
   display: block;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  transition: transform 0.1s ease-out;
+  transform-style: preserve-3d;
   font-weight: <weight>;
   font-style: normal;
 }
@@ -93,11 +128,15 @@ const images = computed(() => {
   transition: opacity 0.3s ease;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
+  font-weight: 400;
   font-weight: <weight>;
   font-style: normal;
 }
 
 .gallery-item:hover .overlay {
   opacity: 1;
+}
+.crazy-frame {
+  perspective: 600px;
 }
 </style>

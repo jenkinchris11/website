@@ -44,7 +44,7 @@ for (const [path, src] of Object.entries(modules)) {
   padding: 1rem;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -52,7 +52,7 @@ for (const [path, src] of Object.entries(modules)) {
   margin-bottom: 2rem;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -60,7 +60,7 @@ for (const [path, src] of Object.entries(modules)) {
   margin-bottom: 1rem;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -70,7 +70,7 @@ for (const [path, src] of Object.entries(modules)) {
   gap: 1rem;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -79,7 +79,7 @@ for (const [path, src] of Object.entries(modules)) {
   overflow: hidden;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -88,7 +88,7 @@ for (const [path, src] of Object.entries(modules)) {
   display: block;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -104,7 +104,7 @@ for (const [path, src] of Object.entries(modules)) {
   transition: opacity 0.3s ease;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 400;
   font-style: normal;
 }
 
