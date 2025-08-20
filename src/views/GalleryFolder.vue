@@ -36,7 +36,7 @@
 
 <script setup>
 import { computed, onMounted, ref, watch, nextTick } from 'vue'
-      >
+  
         <img :src="image.src" :alt="image.alt" />
         <div class="overlay">
           <span>{{ image.caption }}</span>
