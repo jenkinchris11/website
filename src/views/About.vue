@@ -32,7 +32,7 @@ import aboutPic from '../assets/About/AboutPic.jpg'
   padding: 1rem 2rem 1rem 2rem;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 400;
   font-style: normal;
 }
 

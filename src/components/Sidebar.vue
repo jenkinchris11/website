@@ -9,6 +9,16 @@ const isHome = computed(() => route.path === '/')
 const { mdAndDown } = useDisplay()
 const drawer = ref(!mdAndDown.value)
 watch(mdAndDown, val => { drawer.value = !val })
+
+const modules = import.meta.glob('../assets/Gallery/*/*.jpg')
+const galleryFolders = Array.from(
+  new Set(
+    Object.keys(modules).map(path => {
+      const parts = path.split('/')
+      return parts[parts.length - 2]
+    })
+  )
+).sort()
 </script>
 
 <template>
@@ -35,7 +45,18 @@ watch(mdAndDown, val => { drawer.value = !val })
       <v-list-item title="Andrew Jenkin Sculpture" class="text-h3" style="font-size: 1.2rem;"></v-list-item>
       <v-list-item to="/" title="Home"></v-list-item>
       <v-list-item to="/about" title="About"></v-list-item>
-      <v-list-item to="/gallery" title="Gallery"></v-list-item>
+      <v-list-group>
+        <template #activator="{ props }">
+          <v-list-item v-bind="props" title="Gallery"></v-list-item>
+        </template>
+        <v-list-item to="/gallery" title="All"></v-list-item>
+        <v-list-item
+          v-for="folder in galleryFolders"
+          :key="folder"
+          :to="`/gallery/${encodeURIComponent(folder)}`"
+          :title="folder"
+        ></v-list-item>
+      </v-list-group>
       <v-list-item to="/social" title="Social"></v-list-item>
       <v-list-item to="/contact" title="Contact"></v-list-item>
       <v-list-item to="/projects" title="Projects"></v-list-item>
@@ -53,7 +74,6 @@ font-size: 1.2rem;
   font-weight: 300;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
   font-style: normal;
 }
 
@@ -85,7 +105,6 @@ font-size: 1.2rem;
   background: transparent;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
   font-style: normal;
 }
 
@@ -93,7 +112,6 @@ font-size: 1.2rem;
   background-color: rgba(0, 0, 0, 0.04);
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
   font-style: normal;
 }
 
