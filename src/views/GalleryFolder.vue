@@ -19,6 +19,7 @@
 
 <script setup>
 import { computed, onMounted } from 'vue'
+import { computed } from 'vue'
 const props = defineProps({
   folder: {
     type: String,
@@ -68,6 +69,7 @@ onMounted(() => {
     })
   }
 })
+
 </script>
 
 <style scoped>
@@ -76,6 +78,7 @@ onMounted(() => {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-weight: 400;
+  font-weight: <weight>;
   font-style: normal;
 }
 
@@ -86,6 +89,7 @@ onMounted(() => {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-weight: 400;
+  font-weight: <weight>;
   font-style: normal;
 }
 
@@ -95,6 +99,7 @@ onMounted(() => {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-weight: 400;
+  font-weight: <weight>;
   font-style: normal;
 }
 
@@ -107,6 +112,8 @@ onMounted(() => {
   font-style: normal;
   transition: transform 0.1s ease-out;
   transform-style: preserve-3d;
+  font-weight: <weight>;
+  font-style: normal;
 }
 
 .overlay {
@@ -122,13 +129,13 @@ onMounted(() => {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-weight: 400;
+  font-weight: <weight>;
   font-style: normal;
 }
 
 .gallery-item:hover .overlay {
   opacity: 1;
 }
-
 .crazy-frame {
   perspective: 600px;
 }
