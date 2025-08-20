@@ -19,6 +19,5 @@ import Sidebar from './components/Sidebar.vue'
 
 <style>
 .content {
-  padding: 2rem;
 }
 </style>
