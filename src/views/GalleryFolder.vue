@@ -213,10 +213,6 @@ watch(lightboxOpen, async val => {
   right: 1rem;
 }
 
-  font-weight: <weight>;
-  font-style: normal;
-}
-
 .overlay {
   position: absolute;
   inset: 0;
