@@ -36,6 +36,18 @@
 
 <script setup>
 import { computed, onMounted, ref, watch, nextTick } from 'vue'
+      >
+        <img :src="image.src" :alt="image.alt" />
+        <div class="overlay">
+          <span>{{ image.caption }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { computed, onMounted } from 'vue'
 const props = defineProps({
   folder: {
     type: String,
@@ -138,6 +150,7 @@ watch(lightboxOpen, async val => {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-weight: 400;
+  font-weight: <weight>;
   font-style: normal;
 }
 
@@ -148,6 +161,7 @@ watch(lightboxOpen, async val => {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-weight: 400;
+  font-weight: <weight>;
   font-style: normal;
 }
 
@@ -159,6 +173,8 @@ watch(lightboxOpen, async val => {
   font-weight: 400;
   font-style: normal;
   cursor: pointer;
+  font-weight: <weight>;
+  font-style: normal;
 }
 
 .gallery-item img {
@@ -209,6 +225,30 @@ watch(lightboxOpen, async val => {
   right: 1rem;
 }
 
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
 .crazy-frame {
   perspective: 600px;
 }

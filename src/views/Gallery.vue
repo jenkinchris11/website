@@ -197,6 +197,12 @@ watch(lightboxOpen, async val => {
 
 .nav.prev {
   left: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .nav.next {
