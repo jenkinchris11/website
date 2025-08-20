@@ -4,7 +4,6 @@
       :src="backgroundVideo"
       style="height: 100vh;"
     >
-      <div class="overlay" />
       <div class="home fade-up">
         <h1 class="title">Andrew Jenkin Sculpture</h1>
       </div>
