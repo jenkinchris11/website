@@ -25,20 +25,10 @@ const splatFiles = [
   {
     label: 'Scan',
     value: new URL('../assets/Splatter/scan.spz', import.meta.url).href,
-  },
-  {
-    label: 'Alternate',
-    value: new URL('../assets/Splatter/alternate.spz', import.meta.url).href,
-  },
+  }
 ]
 
 const currentFile = ref(splatFiles[0].value)
-const viewerUrl = computed(
-  () =>
-    `https://scaniverse.8thwall.app/model-viewer/?model=${encodeURIComponent(
-      currentFile.value,
-    )}`,
-)
 </script>
 
 <style scoped>
