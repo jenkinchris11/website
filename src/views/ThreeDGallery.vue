@@ -1,15 +1,6 @@
 <template>
   <section class="three-d-gallery">
     <h1>3D Gallery</h1>
-    <canvas ref="canvas"></canvas>
-    <script type="importmap">
-      {
-        "imports": {
-          "playcanvas": "https://cdn.jsdelivr.net/npm/playcanvas@latest/build/playcanvas.mjs"
-        }
-      }
-    </script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@playcanvas/web-components@latest/dist/pwc.mjs"></script>
     <pc-app antialias="false" depth="false" high-resolution="false" stencil="false">
       <pc-asset id="splat" :src="splat"></pc-asset>
       <pc-asset src="https://cdn.jsdelivr.net/npm/playcanvas@latest/scripts/esm/camera-controls.mjs"></pc-asset>
@@ -29,37 +20,15 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import { Application, Entity, Color } from 'playcanvas'
-import { createGSplatEntityFromSpzUrlAsync } from '@spz-loader/playcanvas'
 import splatUrl from '../assets/Splatter/scan.spz?url'
 
-const canvas = ref(null)
-
-onMounted(async () => {
-  const app = new Application(canvas.value, {
-    graphicsDeviceOptions: { antialias: true }
-  })
-  app.start()
-
-  const camera = new Entity('camera')
-  camera.addComponent('camera', {
-    clearColor: new Color(0.1, 0.1, 0.1)
-  })
-  camera.setPosition(0, 0, 3)
-  app.root.addChild(camera)
-
-  const spzEntity = await createGSplatEntityFromSpzUrlAsync(splatUrl)
-  app.root.addChild(spzEntity)
-})
+const splat = splatUrl
 </script>
 
 <style scoped>
 .three-d-gallery {
   width: 100%;
   height: 100%;
-}
-canvas {
 }
 pc-app {
   width: 100%;
