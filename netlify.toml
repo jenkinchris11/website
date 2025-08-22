@@ -8,7 +8,7 @@
   status = 200
 
 [[headers]]
-  for = "/assets/Splatter/*.spz"
+  for = "/assets/*.spz"   # or more broadly: "/**/*.spz"
   [headers.values]
     Access-Control-Allow-Origin = "*"
     Content-Type = "application/octet-stream"
