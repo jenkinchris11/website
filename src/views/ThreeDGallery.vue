@@ -61,6 +61,7 @@ import splat from '../assets/Splatter/scan.ply?url'
   height: 100%;
 }
 canvas {
+}
 pc-app {
   width: 100%;
   height: 80vh;
