@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-const modelUrl = '/assets/Splatter/scan.spz'
+const modelUrl = new URL('/assets/Splatter/scan.spz', window.location.origin).href;
 const viewerUrl = `https://scaniverse.8thwall.app/model-viewer/?model=${encodeURIComponent(
   modelUrl
 )}`
