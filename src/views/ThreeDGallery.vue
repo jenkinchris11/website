@@ -1,11 +1,6 @@
 <template>
   <section class="three-d-gallery">
     <h1>3D Gallery</h1>
-    <select v-model="currentFile">
-      <option v-for="file in splatFiles" :key="file.value" :value="file.value">
-        {{ file.label }}
-      </option>
-    </select>
     <iframe
       class="model-viewer"
       :src="viewerUrl"
@@ -19,16 +14,6 @@ const modelUrl = new URL('../assets/Splatter/scan.spz', import.meta.url).href
 const viewerUrl = `https://scaniverse.8thwall.app/model-viewer/?model=${encodeURIComponent(
   modelUrl
 )}`
-import { ref, computed } from 'vue'
-
-const splatFiles = [
-  {
-    label: 'Scan',
-    value: new URL('../assets/Splatter/scan.spz', import.meta.url).href,
-  }
-]
-
-const currentFile = ref(splatFiles[0].value)
 </script>
 
 <style scoped>
