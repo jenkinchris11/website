@@ -57,6 +57,7 @@ const galleryFolders = Array.from(
           :title="folder"
         ></v-list-item>
       </v-list-group>
+      <v-list-item to="/3d-gallery" title="3D Gallery"></v-list-item>
       <v-list-item to="/social" title="Social"></v-list-item>
       <v-list-item to="/contact" title="Contact"></v-list-item>
       <v-list-item to="/projects" title="Projects"></v-list-item>
