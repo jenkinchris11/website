@@ -7,6 +7,7 @@ import GalleryFolder from '../views/GalleryFolder.vue'
 import Social from '../views/Social.vue'
 import Contact from '../views/Contact.vue'
 import Projects from '../views/Projects.vue'
+import ThreeDGallery from '../views/ThreeDGallery.vue'
 
 const routes = [
   { path: '/', name: 'home', component: Home },
@@ -18,6 +19,7 @@ const routes = [
     component: GalleryFolder,
     props: true,
   },
+  { path: '/3d-gallery', name: '3d-gallery', component: ThreeDGallery },
   { path: '/social', name: 'social', component: Social },
   { path: '/contact', name: 'contact', component: Contact },
   { path: '/projects', name: 'projects', component: Projects },
