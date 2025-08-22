@@ -52,7 +52,6 @@ onMounted(async () => {
   const spzEntity = await createGSplatEntityFromSpzUrlAsync(splatUrl)
   app.root.addChild(spzEntity)
 })
-import splat from '../assets/Splatter/scan.ply?url'
 </script>
 
 <style scoped>
