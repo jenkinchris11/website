@@ -15,6 +15,10 @@
 </template>
 
 <script setup>
+const modelUrl = new URL('../assets/Splatter/scan.spz', import.meta.url).href
+const viewerUrl = `https://scaniverse.8thwall.app/model-viewer/?model=${encodeURIComponent(
+  modelUrl
+)}`
 import { ref, computed } from 'vue'
 
 const splatFiles = [
