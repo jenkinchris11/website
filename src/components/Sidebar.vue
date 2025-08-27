@@ -61,7 +61,7 @@ const galleryFolders = Array.from(
       <v-list-item to="/contact" title="Contact"></v-list-item>
       <div class="social-links">
         <a
-          href="https://facebook.com"
+          href="https://www.facebook.com/AndrewJenkin69/"
           target="_blank"
           rel="noopener"
         >
@@ -73,7 +73,7 @@ const galleryFolders = Array.from(
           </v-btn>
         </a>
         <a
-          href="https://linkedin.com"
+          href="https://uk.linkedin.com/in/andrew-jenkin-b844931b4"
           target="_blank"
           rel="noopener"
         >
@@ -85,7 +85,7 @@ const galleryFolders = Array.from(
           </v-btn>
         </a>
         <a
-          href="https://instagram.com"
+          href="https://www.instagram.com/andrew.jenkin.sculpture/?hl=en-gb"
           target="_blank"
           rel="noopener"
         >
@@ -94,6 +94,7 @@ const galleryFolders = Array.from(
               src="https://i.ibb.co/nsKLnB9F/5296765-camera-instagram-instagram-logo-icon.png"
               alt="Instagram"
             />
+            <i class="fab fa-instagram"></i>
           </v-btn>
         </a>
       </div>
