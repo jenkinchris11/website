@@ -59,6 +59,44 @@ const galleryFolders = Array.from(
       </v-list-group>
       <v-list-item to="/social" title="Social"></v-list-item>
       <v-list-item to="/contact" title="Contact"></v-list-item>
+      <div class="social-links">
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          rel="noopener"
+        >
+          <v-btn icon>
+            <img
+              src="https://i.ibb.co/Wv8VHtQZ/5296499-fb-facebook-facebook-logo-icon.png"
+              alt="Facebook"
+            />
+          </v-btn>
+        </a>
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          rel="noopener"
+        >
+          <v-btn icon>
+            <img
+              src="https://i.ibb.co/1f73cjXs/5296501-linkedin-network-linkedin-logo-icon.png"
+              alt="LinkedIn"
+            />
+          </v-btn>
+        </a>
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          rel="noopener"
+        >
+          <v-btn icon>
+            <img
+              src="https://i.ibb.co/nsKLnB9F/5296765-camera-instagram-instagram-logo-icon.png"
+              alt="Instagram"
+            />
+          </v-btn>
+        </a>
+      </div>
     </v-list>
   </v-navigation-drawer>
 </template>
@@ -112,6 +150,18 @@ font-size: 1.2rem;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-style: normal;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.social-links img {
+  width: 24px;
+  height: 24px;
 }
 
 </style>
