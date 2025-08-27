@@ -66,7 +66,10 @@ const galleryFolders = Array.from(
           rel="noopener"
         >
           <v-btn icon>
-            <i class="fab fa-facebook-f"></i>
+            <img
+              src="https://i.ibb.co/Wv8VHtQZ/5296499-fb-facebook-facebook-logo-icon.png"
+              alt="Facebook"
+            />
           </v-btn>
         </a>
         <a
@@ -75,7 +78,10 @@ const galleryFolders = Array.from(
           rel="noopener"
         >
           <v-btn icon>
-            <i class="fab fa-linkedin-in"></i>
+            <img
+              src="https://i.ibb.co/1f73cjXs/5296501-linkedin-network-linkedin-logo-icon.png"
+              alt="LinkedIn"
+            />
           </v-btn>
         </a>
         <a
@@ -84,6 +90,10 @@ const galleryFolders = Array.from(
           rel="noopener"
         >
           <v-btn icon>
+            <img
+              src="https://i.ibb.co/nsKLnB9F/5296765-camera-instagram-instagram-logo-icon.png"
+              alt="Instagram"
+            />
             <i class="fab fa-instagram"></i>
           </v-btn>
         </a>
@@ -148,6 +158,11 @@ font-size: 1.2rem;
   justify-content: center;
   gap: 0.5rem;
   margin-top: 1rem;
+}
+
+.social-links img {
+  width: 24px;
+  height: 24px;
 }
 
 </style>
