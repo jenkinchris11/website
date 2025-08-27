@@ -59,6 +59,35 @@ const galleryFolders = Array.from(
       </v-list-group>
       <v-list-item to="/social" title="Social"></v-list-item>
       <v-list-item to="/contact" title="Contact"></v-list-item>
+      <div class="social-links">
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          rel="noopener"
+        >
+          <v-btn icon>
+            <i class="fab fa-facebook-f"></i>
+          </v-btn>
+        </a>
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          rel="noopener"
+        >
+          <v-btn icon>
+            <i class="fab fa-linkedin-in"></i>
+          </v-btn>
+        </a>
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          rel="noopener"
+        >
+          <v-btn icon>
+            <i class="fab fa-instagram"></i>
+          </v-btn>
+        </a>
+      </div>
     </v-list>
   </v-navigation-drawer>
 </template>
@@ -112,6 +141,13 @@ font-size: 1.2rem;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-style: normal;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
 }
 
 </style>
