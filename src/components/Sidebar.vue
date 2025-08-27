@@ -57,7 +57,6 @@ const galleryFolders = Array.from(
           :title="folder"
         ></v-list-item>
       </v-list-group>
-      <v-list-item to="/social" title="Social"></v-list-item>
       <v-list-item to="/contact" title="Contact"></v-list-item>
       <div class="social-links">
         <a
@@ -154,7 +153,9 @@ font-size: 1.2rem;
 }
 
 .social-links {
+  background: none;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   gap: 0.5rem;
   margin-top: 1rem;
