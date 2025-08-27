@@ -93,7 +93,6 @@ const galleryFolders = Array.from(
               src="https://i.ibb.co/nsKLnB9F/5296765-camera-instagram-instagram-logo-icon.png"
               alt="Instagram"
             />
-            <i class="fab fa-instagram"></i>
           </v-btn>
         </a>
       </div>
